@@ -1,0 +1,30 @@
+[
+  {
+    "model_name": "Linear Regression",
+    "r2_score": 0.679,
+    "mae": 1.113,
+    "rmse": 2.13,
+    "is_trained": true
+  },
+  {
+    "model_name": "Random Forest",
+    "r2_score": 0.6037,
+    "mae": 1.346,
+    "rmse": 2.367,
+    "is_trained": true
+  },
+  {
+    "model_name": "XGBoost",
+    "r2_score": 0.6026,
+    "mae": 1.358,
+    "rmse": 2.37,
+    "is_trained": true
+  },
+  {
+    "model_name": "LightGBM",
+    "r2_score": 0.6555,
+    "mae": 1.214,
+    "rmse": 2.207,
+    "is_trained": true
+  }
+]
