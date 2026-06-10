@@ -19,9 +19,11 @@ class Settings(BaseSettings):
         return v
 
     GEMINI_API_KEY: str = ""
-    ML_MODEL_PATH: str = "../ml_engine/models/lightgbm_student_model.pkl"
-    ML_ENCODER_PATH: str = "../ml_engine/models/baseline_encoder.joblib"
-    ML_COMPARISON_PATH: str = "../ml_engine/models/model_comparison.json"
+    
+    # Updated paths to point inside the deployed backend structure
+    ML_MODEL_PATH: str = "app/assets/lightgbm_student_model.pkl"
+    ML_ENCODER_PATH: str = "app/assets/baseline_encoder.joblib"
+    ML_COMPARISON_PATH: str = "app/assets/model_comparison.json"
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
