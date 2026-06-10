@@ -17,7 +17,7 @@ export default function WhatIfPanel({ initialProfile, onSimulate }: WhatIfPanelP
     setSimulating(true);
     try {
       // Hit backend what-if endpoint
-      const res = await api.post("/analytics/what-if", profile);
+      const res = await api.post("/api/analytics/what-if", profile);
       onSimulate(res.data);
     } catch (e) {
       console.log("Offline fallback simulation active.");

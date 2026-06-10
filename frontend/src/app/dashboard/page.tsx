@@ -103,7 +103,7 @@ export default function DashboardPage() {
           updateDashboardStates(parsed);
         }
 
-        const res = await api.get("/questionnaire/latest");
+        const res = await api.get("/api/questionnaire/latest");
         if (res.data) {
           setStudentProfile({
             study_hours_per_week: res.data.study_hours_per_week,
@@ -127,7 +127,7 @@ export default function DashboardPage() {
 
     const fetchPlans = async () => {
       try {
-        const res = await api.get("/coach/plans");
+        const res = await api.get("/api/coach/plans");
         if (res.data) {
           setSavedPlans(res.data);
         }

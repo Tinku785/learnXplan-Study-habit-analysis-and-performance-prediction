@@ -76,7 +76,7 @@ export default function AICoachChat({
     setLoading(true);
 
     try {
-      const res = await api.post("/coach/chat", { message: textToSend });
+      const res = await api.post("/api/coach/chat", { message: textToSend });
       setMessages((prev) => [
         ...prev,
         {
@@ -122,7 +122,7 @@ export default function AICoachChat({
     if (savingMessageId === msg.id || savedMessageIds.includes(msg.id)) return;
     setSavingMessageId(msg.id);
     try {
-      const res = await api.post("/coach/plans", { plan_content: msg.text });
+      const res = await api.post("/api/coach/plans", { plan_content: msg.text });
       setSavedMessageIds((prev) => [...prev, msg.id]);
       if (onPlanSaved && res.data) {
         onPlanSaved(res.data);

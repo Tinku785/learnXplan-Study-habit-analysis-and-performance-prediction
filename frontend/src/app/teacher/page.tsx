@@ -59,12 +59,12 @@ export default function TeacherPage() {
 
     const loadData = async () => {
       try {
-        const benchRes = await api.get("/analytics/model-comparison");
+        const benchRes = await api.get("/api/analytics/model-comparison");
         if (benchRes.data && benchRes.data.length > 0) {
           setBenchmarks(benchRes.data);
         }
         
-        const rosterRes = await api.get("/analytics/aggregate");
+        const rosterRes = await api.get("/api/analytics/aggregate");
         if (rosterRes.data && rosterRes.data.length > 0) {
           // Map DB models to list structure
           const mapped = rosterRes.data.map((item: any, idx: number) => ({

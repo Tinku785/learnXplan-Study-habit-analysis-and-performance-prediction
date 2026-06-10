@@ -60,7 +60,7 @@ export default function QuestionnairePage() {
 
     try {
       console.log("Submitting expanded questionnaire profile: ", formData);
-      const res = await api.post("/questionnaire/submit", formData);
+      const res = await api.post("/api/questionnaire/submit", formData);
       
       // Store submission log references
       localStorage.setItem("latestPrediction", JSON.stringify(res.data));
