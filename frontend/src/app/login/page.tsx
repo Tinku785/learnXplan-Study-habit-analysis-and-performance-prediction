@@ -39,7 +39,7 @@ export default function LoginPage() {
     try {
       if (isSignUp) {
         // Sign Up Flow
-        await api.post("/auth/register", {
+        await api.post("/api/auth/register", {
           name,
           email,
           password,
@@ -53,7 +53,7 @@ export default function LoginPage() {
         loginParams.append("username", email);
         loginParams.append("password", password);
         
-        const loginRes = await api.post("/auth/login", loginParams, {
+        const loginRes = await api.post("/api/auth/login", loginParams, {
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
           },
@@ -63,7 +63,7 @@ export default function LoginPage() {
         localStorage.setItem("token", token);
         
         // Pull user info
-        const meRes = await api.get("/auth/me", {
+        const meRes = await api.get("/api/auth/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
         
@@ -83,7 +83,7 @@ export default function LoginPage() {
         loginParams.append("username", email);
         loginParams.append("password", password);
         
-        const loginRes = await api.post("/auth/login", loginParams, {
+        const loginRes = await api.post("/api/auth/login", loginParams, {
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
           },
@@ -93,7 +93,7 @@ export default function LoginPage() {
         localStorage.setItem("token", token);
         
         // Pull user info
-        const meRes = await api.get("/auth/me", {
+        const meRes = await api.get("/api/auth/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
         
@@ -106,7 +106,7 @@ export default function LoginPage() {
         } else {
           // Check if student has already completed a survey
           try {
-            await api.get("/questionnaire/latest", {
+            await api.get("/api/questionnaire/latest", {
               headers: { Authorization: `Bearer ${token}` },
             });
             localStorage.setItem("hasSubmittedSurvey", "true");
